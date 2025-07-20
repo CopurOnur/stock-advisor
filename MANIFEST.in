@@ -1,0 +1,17 @@
+# Include additional files in the package distribution
+include README.md
+include LICENSE
+include CHANGELOG.md
+include .env.example
+include Makefile
+recursive-include configs *.yaml *.txt
+recursive-include docs *.md *.rst
+recursive-include examples *.py
+recursive-include stock_advisor *.py
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * .DS_Store
+recursive-exclude * *.egg-info
+recursive-exclude models *.pkl *.pth *.h5
+recursive-exclude logs *
+recursive-exclude .git *

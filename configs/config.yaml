@@ -1,0 +1,91 @@
+# Stock Advisor Configuration File
+
+# Data Sources
+data_sources:
+  primary: "yahoo"  # yahoo, alphavantage, iex
+  backup: "iex"
+  
+  yahoo:
+    enabled: true
+    
+  alphavantage:
+    enabled: false
+    api_key: ""  # Set via ALPHAVANTAGE_API_KEY env var
+    
+  iex:
+    enabled: false
+    api_key: ""  # Set via IEX_API_KEY env var
+
+# News Sources
+news_sources:
+  enabled: true
+  
+  newsapi:
+    enabled: false
+    api_key: ""  # Set via NEWS_API_KEY env var
+    
+  rss_feeds:
+    enabled: true
+    sources:
+      - "https://feeds.bloomberg.com/markets/news.rss"
+      - "https://feeds.reuters.com/news/us"
+      - "https://rss.cnn.com/rss/money_latest.rss"
+
+# Machine Learning Models
+ml_models:
+  technical_analysis:
+    enabled: true
+    
+  reinforcement_learning:
+    enabled: true
+    training_episodes: 100
+    auto_train: true
+    
+  enhanced_rl:
+    enabled: true
+    ensemble_size: 3
+    training_episodes: 200
+    use_pytorch: true
+    
+  hybrid:
+    enabled: true
+    weights:
+      technical: 0.3
+      rl: 0.3
+      news: 0.4
+
+# Prediction Settings
+prediction:
+  default_days: 3
+  max_days: 7
+  confidence_threshold: 0.5
+  
+# Risk Management
+risk_management:
+  max_position_size: 0.1  # 10% of portfolio
+  stop_loss: 0.05  # 5% stop loss
+  transaction_cost: 0.001  # 0.1% transaction cost
+  
+# UI Settings
+ui:
+  port: 8501
+  theme: "light"  # light, dark
+  default_demo_mode: true
+  
+# Logging
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  file: "logs/stock_advisor.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  
+# Cache Settings
+cache:
+  enabled: true
+  ttl: 3600  # 1 hour in seconds
+  max_size: 1000
+  
+# Model Storage
+models:
+  directory: "models"
+  auto_save: true
+  versioning: true
