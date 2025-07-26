@@ -9,9 +9,9 @@ from .hybrid_predictor import HybridPredictor
 from .predictor_base import BasePredictor
 
 __all__ = [
-    'BasePredictor',
-    'TechnicalPredictor',
-    'RLPredictor', 
-    'EnhancedRLPredictor',
-    'HybridPredictor'
+    "BasePredictor",
+    "TechnicalPredictor",
+    "RLPredictor",
+    "EnhancedRLPredictor",
+    "HybridPredictor",
 ]
